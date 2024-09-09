@@ -1,0 +1,14 @@
+from db.nesia_travel_db import NesiaTravel
+from flask import jsonify, blueprints
+
+def get_destinasi():
+    db_instance = NesiaTravel('nesiatravel', 'localhost', 'root', '')
+    result_fetch = db_instance.dbConnect()
+    
+    if result_fetch is not None:
+        return result_fetch
+    else:
+        return jsonify({
+            'success': False,
+            'error': 'Failed to fetch data',
+        }), 500
