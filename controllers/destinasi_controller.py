@@ -11,7 +11,7 @@ def get_destinasi():
             cursor.execute('SELECT * FROM destinasi')
             fetch_result = cursor.fetchall()
             
-            print(f'result data: {fetch_result}')
+            print(f'hasil data: {fetch_result}')
             
             if fetch_result:
                 return jsonify({
@@ -21,7 +21,7 @@ def get_destinasi():
             else:
                 return jsonify({
                     'success': False,
-                    'message': 'No data found'
+                    'message': 'data ditemukan'
                 }), 404
     except Exception as e:
         print(f'Error occurred: {e}')
